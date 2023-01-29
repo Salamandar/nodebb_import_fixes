@@ -1,4 +1,39 @@
-url: 'https://forum.piedallu.me'
-token: XXXXXXXX
+# Server details
+server:
+  # The base url of your forum, without /api or anything
+  url: 'https://myforum.tld'
+  # The token provided by the write api plugin at `https://yourforum.tld/admin/plugins/write-api`
+  token: XXXXXXXX
 
-test_topic: 9627
+
+# Which topics / posts to treat
+selection:
+  # Treat the whole forum
+  all: true
+
+  # Topic IDs to include/exclude
+  topic_include: []
+  topic_exclude: []
+
+  # Post IDs to include/exclude
+  post_include: []
+  post_exclude: []
+
+
+conversion:
+  # Should we replace the phpbb
+  # <a download="someimage" href="someimage"> and <ATTACHMENT filename="name">...</ATTACHMENT>
+  # by markdown ![image name](image url)
+  image_uploads: true
+
+  # Should we replace standard html images <img src="url" alt="text">
+  # by markdown ![image name](image url)
+  image_html: true
+
+  # Should we replace multiple </br></br> by a single </br>
+  multiple_br: true
+
+# Will write info and errors to this file
+logging:
+  enabled: true
+  file: ./reparation.log
